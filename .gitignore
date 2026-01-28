@@ -5,6 +5,7 @@ Logs/
 Obj/
 UserSettings/
 MemoryCaptures/
+Assets/Tutorials/
 
 # Ignore the editor settings
 .vscode/
