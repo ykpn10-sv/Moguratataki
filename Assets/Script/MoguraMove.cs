@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
  
 public class MoguraMove : MonoBehaviour
 {
@@ -11,11 +12,15 @@ public class MoguraMove : MonoBehaviour
 
     public GameObject okText ;
 
+    public TextMeshProUGUI scoreText;
+    int score = 0;
+
  
     void Start()
     {
         isUp = false;
         okText.SetActive(false);
+        scoreText.text = "Score: 0";
 
     }
  
@@ -68,6 +73,9 @@ public class MoguraMove : MonoBehaviour
                 // テキスト表示
                 okText.SetActive(true);
                 Invoke("HideOkText", 0.2f);
+                
+                score++;
+                scoreText.text = "Score: " + score;
             }
         
     }
@@ -86,10 +94,7 @@ public class MoguraMove : MonoBehaviour
         okText.SetActive(false);
 
     }
-
-
-
-
+    
     IEnumerator MoguraUp()
     {
 
